@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>JavaScript Resume Builder</h1>
+    <div class="container">
+      <div id="sec">
+        <h2>Personal Information</h2>
+        <form id="form1">
+          <label for="username">Name</label>
+          <input id="username" name="username" type="text" required /><br />
+          <label for="address">Address</label>
+          <input id="address" name="address" type="text" required /><br />
+          <label for="phone">Phone</label>
+          <input id="phone" name="phone" type="text" required /><br />
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required /><br />
+          <button type="submit">Add</button>
+        </form>
+
+        <h2>Educational Background</h2>
+        <form id="form2">
+          <label for="university">University</label>
+          <input id="university" name="university" type="text" required /><br />
+          <label for="degree">Degree</label>
+          <input id="degree" name="degree" type="text" required /><br />
+          <label for="graduation">Graduation</label>
+          <input id="graduation" name="graduation" type="text" required /><br />
+          <!--------next from-------------->
+          <button id="add" onclick="addmoredata()">multiple</button>
+          <button type="submit">add</button>
+          <div id="addingmultiple"></div>
+        </form>
+       
+      </div>
+
+      <div id="sec">
+        <h2>Work Experience</h2>
+        <form id="form3">
+          <label for="cname">Company Name</label>
+          <input id="cname" name="cname" type="text" required /><br />
+          <label for="pname">Position</label>
+          <input id="pname" name="pname" type="text" required /><br />
+          <label for="duration">Duration</label>
+          <input id="duration" name="duration" type="text" required /><br />
+          <button type="submit">Add</button>
+        </form>
+
+        <h2>Technical Skills</h2>
+        <form id="form4">
+          <label for="planguage">Programming Languages</label>
+          <input id="planguage" name="planguage" type="text" required /><br />
+          <label for="tools">Tools</label>
+          <input id="tools" name="tools" type="text" required /><br />
+          <button type="submit">Add</button>
+        </form>
+      </div>
+    </div>
+    <button id="submitalldata" onclick="submitalldata()">submit</button>
+    <button id="generateResume" onclick="generateResume()">Generateresume</button>
+    <div class="resume" id="resume"></div>
+    <!-- <button type="button" onclick="generateResume()">Generate Resume</button> -->
+<script src="script.js"></script>
+  </body>
+</html>
