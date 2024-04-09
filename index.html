@@ -4,8 +4,58 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Resume</title>
-    <link rel="stylesheet" href="style.css">
   </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .container {
+      display: flex;
+    }
+    #sec {
+      flex: 1;
+      border: 2px solid black;
+    }
+    .resume {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 2px solid white;
+      background-color: #f9f9f9;
+    }
+
+    .resume h1 {
+      font-size: 32px;
+      color: grey;
+      margin-bottom: 10px;
+    }
+
+    .resume p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .resume h2 {
+      font-size: 24px;
+      color: grey;
+      margin-bottom: 10px;
+    }
+
+    .resume ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .resume ul li {
+      margin-bottom: 10px;
+    }
+
+    .resume ul li:last-child {
+      margin-bottom: 0;
+    }
+  </style>
   <body>
     <h1>JavaScript Resume Builder</h1>
     <div class="container">
@@ -32,11 +82,10 @@
           <label for="graduation">Graduation</label>
           <input id="graduation" name="graduation" type="text" required /><br />
           <!--------next from-------------->
-          <button id="add" onclick="addmoredata()">multiple</button>
+
           <button type="submit">add</button>
           <div id="addingmultiple"></div>
         </form>
-       
       </div>
 
       <div id="sec">
@@ -62,9 +111,11 @@
       </div>
     </div>
     <button id="submitalldata" onclick="submitalldata()">submit</button>
-    <button id="generateResume" onclick="generateResume()">Generateresume</button>
+    <button id="generateResume" onclick="generateResume()">
+      Generateresume
+    </button>
     <div class="resume" id="resume"></div>
     <!-- <button type="button" onclick="generateResume()">Generate Resume</button> -->
-<script src="script.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

@@ -6,7 +6,7 @@ let myObj = {
   personal: {},
   education: [],
   Experience: [],
-  Technical: {},
+  Technical: [],
 };
 const multiple = document.querySelector('#addingmultiple');
 const form1 = document.querySelector("#form1");
@@ -66,7 +66,7 @@ form4.addEventListener("submit", function (e) {
   form4data.forEach((value, key) => {
     Tech[key] = value;
   });
-  myObj.Technical = Tech;
+  myObj.Technical.push(Tech);
   // console.log(myObj)
   form4.reset();
 });
@@ -129,19 +129,17 @@ form.appendChild(btn1);
 multiple.appendChild(form)
 
 form.addEventListener('submit',function(){
-  const formdata = new FormData(form);
-  const edu = {};
-  formdata.forEach((value,key) =>{
-    edu[key] = value;
-  });
-  myObj.education.push(edu);
-  form.reset();
+  e.preventDefault();
+  
+
 });
 
 
 }
 
 function generateResume() {
+  
+
     
     // console.log(myObj);
   
@@ -152,7 +150,7 @@ function generateResume() {
     const email = myObj.personal.email || "";
   
     // Retrieve the educational background
-    const education = myObj.education || [];
+    const education = myObj.education || {};
     let educationList = "";
     for(let i of education){
        educationList += `
@@ -164,7 +162,7 @@ function generateResume() {
     console.log(educationList);
   
     // Retrieve the work experience
-    const experience = myObj.Experience || [];
+    const experience = myObj.Experience || {};
     let experienceList = "";
     for(let i of experience){
       experienceList += `
@@ -174,9 +172,13 @@ function generateResume() {
   
     // Retrieve technical skills
     const technical = myObj.Technical || {};
-    const skillsList = `
-      <li>Language: ${technical.planguage || ''}, Tools: ${technical.tools || ''}</li>
-    `;
+    let skillsList = "";
+    for(let i of technical)
+    {
+       skillsList += `
+      <li>Language: ${i.planguage || ''}, Tools: ${i.tools || ''}</li>
+    `; 
+    }
   
     // Create the resume content
     const resumeContent = `
@@ -198,4 +200,18 @@ function generateResume() {
     // Set the resume content in the 'resume' element
     document.getElementById("resume").innerHTML = resumeContent;
   }
+
   
+
+  
+    // const a = document.querySelectorAll('form');
+    // const arr = Array.from(a);
+    // arr.forEach(function(form){
+    //   form.addEventListener('mouseover',function(){
+    //     form.style.display = "None";
+
+    //   })
+    // })
+
+
+
